@@ -1,5 +1,5 @@
 {
-  "name": "TailBliss",
+  "name": "mediadrugs-tailbliss",
   "version": "0.1.1",
   "description": "Hugo + Alpine.js + TailwindCSS",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "scripts": {
     "start": "concurrently npm:watch:*",
     "watch:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
-    "watch:hugo": "hugo server -p 1313 --bind 127.0.0.1",
+    "watch:hugo": "hugo server",
     "build": "hugo --minify",
     "test": "hugo"
   },

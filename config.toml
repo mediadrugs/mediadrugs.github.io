@@ -1,5 +1,6 @@
-baseURL = "https://tailbliss.netlify.app/"
-title = "TailBliss"
+# https://themes.gohugo.io/themes/tailbliss/
+baseURL = "https://mediadrugs.com/"
+title = "Mediadrugs"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
@@ -13,14 +14,14 @@ darkmode_js = ["assets/js/darkmode.js"]
 enableInlineShortcodes = true
 
 [params]
-author = "Nusser Studios"
+author = ""
 authorimage = "../assets/images/global/author.webp"
-github = "https://github.com/nusserstudios"
-facebook = "https://facebook.com/nusserstudios"
+github = "https://github.com/mediadrugs"
+facebook = "https://facebook.com/mediadrugs"
 og_image = "/images/tailbliss-cover.png"
-sitename = "TailBliss"
-twitter = "@nusserstudios"
-description = "TailBliss is Hugo Starter"
+sitename = "Mediadrugs - Digital Marketing Agency"
+twitter = "@mediadrugs"
+description = "Mediadrugs is a media company that produces content for the web and other media. This is the website for Mediadrugs."
 
 [markup]
 [markup.goldmark]
