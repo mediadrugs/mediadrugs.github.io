@@ -1,5 +1,5 @@
 .GODEPS:
-	go install github.com/gohugoio/hugo@latest
+	go install -tags extended github.com/gohugoio/hugo@latest
 
 .PHONY: build
 build: .GODEPS ## Build application
