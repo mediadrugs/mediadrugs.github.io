@@ -4,6 +4,7 @@
 .PHONY: build
 build: .GODEPS ## Build application
 	hugo --minify
+	echo "mediadrugs.com" > public/CNAME
 
 .PHONY: help
 help:
