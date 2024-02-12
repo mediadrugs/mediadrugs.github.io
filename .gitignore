@@ -7,3 +7,4 @@ yarn-error.log
 .hugo_build.lock
 public/
 resources/
+.DS_Store
