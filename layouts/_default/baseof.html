@@ -6,6 +6,13 @@
 </head>
 
 <body class="bg-zinc-100 dark:bg-gray-800">
+    {{- if .Site.Params.analytics.google.tagID -}}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.analytics.google.tagID }}"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    {{- end -}}
+
     {{ partial "nav.html" . }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer" . }}

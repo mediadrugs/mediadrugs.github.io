@@ -23,6 +23,10 @@ sitename = "Mediadrugs - Digital Marketing Agency"
 twitter = "@mediadrugs"
 description = "Mediadrugs is a media company that produces content for the web and other media. This is the website for Mediadrugs."
 
+[params.analytics]
+  [params.analytics.google]
+    tagID = "GTM-525JVVPW"
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
