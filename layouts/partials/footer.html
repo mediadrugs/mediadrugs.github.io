@@ -10,15 +10,17 @@
                 <a href="/about" class="text-base text-gray-400 hover:text-gray-300">About</a>
             </div>
 
-            {{ $mPaginator := .Paginate (where site.RegularPages "Type" "posts") 1 }}
-            {{if and $mPaginator $mPaginator.Pages}}
-            <div class="px-5 py-2">
-                <a href="/categories/blog/" class="text-base text-gray-400 hover:text-gray-300">Blog</a>
-            </div>
+            {{if (where site.RegularPages "Type" "posts")}}
+                {{ $mPaginator := .Paginate (where site.RegularPages "Type" "posts") 1 }}
+                {{if and $mPaginator $mPaginator.Pages}}
+                <div class="px-5 py-2">
+                    <a href="/categories/blog/" class="text-base text-gray-400 hover:text-gray-300">Blog</a>
+                </div>
 
-            <div class="px-5 py-2">
-                <a href="/categories/news/" class="text-base text-gray-400 hover:text-gray-300">News</a>
-            </div>
+                <div class="px-5 py-2">
+                    <a href="/categories/news/" class="text-base text-gray-400 hover:text-gray-300">News</a>
+                </div>
+                {{end}}
             {{end}}
 
             <div class="px-5 py-2">
