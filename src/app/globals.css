@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyber-black: #050510;
+  --cyber-dark: #0a0a1a;
+  --cyber-gray: #111128;
+  --neon-cyan: #00ffff;
+  --neon-magenta: #ff00ff;
+  --neon-green: #00ff41;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cyber-black);
+  color: #e0e0ff;
+  overflow-x: hidden;
+}
+
+/* ── Neon text ─────────────────────────────────────────── */
+@layer components {
+  .neon-text-cyan {
+    color: var(--neon-cyan);
+    text-shadow:
+      0 0 7px #00ffff,
+      0 0 15px #00ffff,
+      0 0 30px #00ffff80;
+  }
+
+  .neon-text-magenta {
+    color: var(--neon-magenta);
+    text-shadow:
+      0 0 7px #ff00ff,
+      0 0 15px #ff00ff,
+      0 0 30px #ff00ff80;
+  }
+
+  .neon-text-green {
+    color: var(--neon-green);
+    text-shadow:
+      0 0 7px #00ff41,
+      0 0 15px #00ff41,
+      0 0 30px #00ff4180;
+  }
+
+  /* ── Neon borders ────────────────────────────────────── */
+  .neon-border-cyan {
+    border-color: var(--neon-cyan);
+    box-shadow:
+      0 0 8px #00ffff,
+      0 0 16px #00ffff40,
+      inset 0 0 8px #00ffff10;
+  }
+
+  .neon-border-magenta {
+    border-color: var(--neon-magenta);
+    box-shadow:
+      0 0 8px #ff00ff,
+      0 0 16px #ff00ff40,
+      inset 0 0 8px #ff00ff10;
+  }
+
+  /* ── Cyber card ──────────────────────────────────────── */
+  .cyber-card {
+    background: linear-gradient(135deg, #0a0a1a 0%, #0d0d22 100%);
+    border: 1px solid #1a1a3a;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .cyber-card:hover {
+    border-color: var(--neon-cyan);
+    box-shadow:
+      0 0 12px #00ffff40,
+      0 0 24px #00ffff20,
+      inset 0 0 12px #00ffff08;
+  }
+
+  /* ── Neon glow helpers ───────────────────────────────── */
+  .neon-glow-cyan {
+    box-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff40,
+      0 0 40px #00ffff20;
+  }
+
+  .neon-glow-magenta {
+    box-shadow:
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff40,
+      0 0 40px #ff00ff20;
+  }
+
+  /* ── Glitch text ─────────────────────────────────────── */
+  .glitch-text {
+    position: relative;
+    animation: flicker 4s linear infinite;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch-text::before {
+    color: var(--neon-cyan);
+    clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+    transform: translateX(-2px);
+    animation: glitch-1 3s infinite linear;
+  }
+
+  .glitch-text::after {
+    color: var(--neon-magenta);
+    clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+    transform: translateX(2px);
+    animation: glitch-2 3s infinite linear;
+  }
+
+  /* ── Neon button ─────────────────────────────────────── */
+  .neon-btn-cyan {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    background: transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .neon-btn-cyan::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--neon-cyan);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+
+  .neon-btn-cyan:hover {
+    color: #050510;
+    box-shadow:
+      0 0 20px #00ffff,
+      0 0 40px #00ffff60;
+  }
+
+  .neon-btn-cyan:hover::before {
+    transform: scaleX(1);
+  }
+
+  .neon-btn-magenta {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid var(--neon-magenta);
+    color: var(--neon-magenta);
+    background: transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .neon-btn-magenta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--neon-magenta);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+
+  .neon-btn-magenta:hover {
+    color: #ffffff;
+    box-shadow:
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff60;
+  }
+
+  .neon-btn-magenta:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* ── Scan-line overlay ───────────────────────────────── */
+  .scan-lines {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.08) 3px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    z-index: 9999;
+  }
+
+  /* ── Grid background ─────────────────────────────────── */
+  .cyber-grid {
+    background-image:
+      linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+/* ── Keyframe animations ───────────────────────────────── */
+@keyframes glitch-1 {
+  0%,
+  95%,
+  100% {
+    transform: translateX(0);
+    clip-path: none;
+  }
+  96% {
+    transform: translateX(-3px);
+    clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+  }
+  97% {
+    transform: translateX(3px);
+    clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%);
+  }
+  98% {
+    transform: translateX(-1px);
+    clip-path: polygon(0 10%, 100% 10%, 100% 25%, 0 25%);
+  }
+}
+
+@keyframes glitch-2 {
+  0%,
+  95%,
+  100% {
+    transform: translateX(0);
+    clip-path: none;
+  }
+  96% {
+    transform: translateX(3px);
+    clip-path: polygon(0 55%, 100% 55%, 100% 70%, 0 70%);
+  }
+  97% {
+    transform: translateX(-3px);
+    clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+  }
+  98% {
+    transform: translateX(1px);
+    clip-path: polygon(0 75%, 100% 75%, 100% 90%, 0 90%);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  89%,
+  95%,
+  100% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  92% {
+    opacity: 0.9;
+  }
+  93% {
+    opacity: 0.6;
+  }
+  96% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050510;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffff40;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffff80;
+}
