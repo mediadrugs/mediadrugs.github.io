@@ -106,7 +106,7 @@ export default function Footer() {
             </ul>
 
             {/* Social */}
-            <div className="flex gap-4 mt-6">
+            {/* <div className="flex gap-4 mt-6">
               {socialLinks.map(({ label, href, icon }) => (
                 <a
                   key={label}
@@ -119,7 +119,7 @@ export default function Footer() {
                   {icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 

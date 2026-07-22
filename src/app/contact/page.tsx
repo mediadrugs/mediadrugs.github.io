@@ -21,20 +21,20 @@ const details = [
     icon: "◷",
     color: "magenta",
   },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/company/mediadrugs",
-    href: "https://www.linkedin.com/company/mediadrugs",
-    icon: "◈",
-    color: "cyan",
-  },
-  {
-    label: "Address",
-    value: "Ehitajate tee 110, 13517 Tallinn, Estonia",
-    href: null,
-    icon: "◎",
-    color: "green",
-  },
+  // {
+  //   label: "LinkedIn",
+  //   value: "linkedin.com/company/mediadrugs",
+  //   href: "https://www.linkedin.com/company/mediadrugs",
+  //   icon: "◈",
+  //   color: "cyan",
+  // },
+  // {
+  //   label: "Address",
+  //   value: "Ehitajate tee 110, 13517 Tallinn, Estonia",
+  //   href: null,
+  //   icon: "◎",
+  //   color: "green",
+  // },
 ];
 
 export default function ContactPage() {

@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* ── Stats ────────────────────────────────────────── */}
-      <section className="bg-cyber-dark border-y border-cyber-border py-10">
+      {/* <section className="bg-cyber-dark border-y border-cyber-border py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <dl className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map(({ value, label }) => (
@@ -121,7 +121,7 @@ export default function Home() {
             ))}
           </dl>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Services preview ─────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
